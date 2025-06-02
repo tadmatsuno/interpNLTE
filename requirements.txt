@@ -1,0 +1,9 @@
+astroquery
+os
+astropy
+scipy
+numpy
+time
+tqdm
+multiprocessing
+functools
