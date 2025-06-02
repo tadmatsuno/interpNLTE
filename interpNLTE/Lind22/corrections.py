@@ -178,6 +178,7 @@ def get_corrections(data, ew_columns, element):
         f_NLTE_f = Lind22interpolator(NLTEdata,wvl,use_filled_abundance=True)
         f_NLTE = Lind22interpolator(NLTEdata,wvl,use_filled_abundance=False)
         data[clm+"_NLTEcorr"] = np.nan
+        data[clm+"_NLTEflag"] = -1
         for d in data:
             if np.isnan(d[clm]):
                 continue
@@ -213,6 +214,6 @@ def get_corrections(data, ew_columns, element):
                 corr_adopt = np.nan
                 flag = -1
             d[clm+"_NLTEcorr"] = corr_adopt
-            d[clm+"_NLTEflag"] = corr_adopt
+            d[clm+"_NLTEflag"] = flag
             
         
